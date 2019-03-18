@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개인 정보 등록</title>
+</head>
+<body>
+	<h1>개인 정보 등록</h1><hr>
+	<form method="POST" action="register_pinfo.do">
+	<p>1. 이름 : <input type="text" name="name" /></p>
+	<p>2. 아이디 : <input type="text" name="id" /></p>
+	<p>3. 패스워드 : <input type="password" name="passwd" /></p>
+	<p>4. 성별 : 
+		남<input type="radio" name="gender" value="male" />
+		여<input type="radio" name="gender" value="female" /></p>
+	<p>5. 메일 수신 : 
+		공지 메일<input type="checkbox" name="inotice" />
+		광고 메일<input type="checkbox" name="cnotice" />
+		배송확인 메일<input type="checkbox" name="dnotice" />
+		</p>
+	<p>6. 직업 : 
+		<select name="job" >
+			<option>회사원</option>
+			<option>학생</option>
+			<option>공무원</option>
+			<option>기타</option>
+		</select></p>
+	<p>7. 자기소개 : 
+		<textarea name="intro" rows="5" cols="50">
+		</textarea></p>
+	<p><input type="reset" value="초기화">
+	<input type="submit" value="확인"></p>
+	</form>
+</body>
+</html>
