@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>개인 정보 등록</title>
+	<style>
+	.row_title {
+		display: inline-block;
+		width: 125px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		vertical-align: middle;		
+	}
+	</style>
+	<script>
+	function confirmPasswd() {
+		var passwd = document.getElementById("passwd").value;
+		var confirmPasswd = document.getElementById("passwd_confirm").value;
+		if (confirmPasswd != "" && passwd != confirmPasswd) {
+			alert("Wrong conform password!!");
+		}
+	}
+	</script>
+</head>
+<body>
+	<h1>개인 정보 등록</h1><hr>
+	<form method="POST" action="register.do">
+	<p><span class="row_title">1. 이름 : </span><input type="text" name="name" /></p>
+	<p><span class="row_title">2. 아이디 : </span><input type="text" name="id" /></p>
+	<p><span class="row_title">3. 패스워드 : </span><input type="password" name="passwd" id="passwd" /></p>
+	<p><span class="row_title">&nbsp;&nbsp;&nbsp;&nbsp;패스워드 확인 :</span>
+		<input type="password" name="passwd_confirm" id="passwd_confirm" onblur="confirmPasswd()"/></p>
+	<p><span class="row_title">4. 성별 : </span>
+		남<input type="radio" name="gender" value="male" />&nbsp;&nbsp;
+		여<input type="radio" name="gender" value="female" /></p>
+	<p><span class="row_title">5. 메일 수신 : </span> 
+		공지 메일<input type="checkbox" name="inotice" />&nbsp;&nbsp;
+		광고 메일<input type="checkbox" name="cnotice" />&nbsp;&nbsp;
+		배송확인 메일<input type="checkbox" name="dnotice" />
+		</p>
+	<p><span class="row_title">6. 직업 : </span>
+		<select name="job" >
+			<option>회사원</option>
+			<option>학생</option>
+			<option>공무원</option>
+			<option>기타</option>
+		</select></p>
+	<p><span class="row_title">7. 자기소개 : </span>
+	<textarea name="intro" rows="5" cols="50">
+		</textarea></p>
+	<div style="margin-left: 130px;">
+	<input type="reset" value="초기화">
+	<input type="submit" value="확인">
+	</div>
+	</form>
+</body>
+</html>
