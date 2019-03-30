@@ -13,9 +13,19 @@
   <servlet>
   	<servlet-name>fibonacci_series</servlet-name>
   	<servlet-class>com.example.fibonacci_series.FibonacciSeries</servlet-class>
+  	<init-param>
+  		<param-name>log_file</param-name>
+  		<param-value>/Users/yjkim/log_data.txt</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>max_elements</param-name>
+  		<param-value>200</param-value>
+  	</init-param>
   </servlet>
   <servlet-mapping>
   	<servlet-name>fibonacci_series</servlet-name>
   	<url-pattern>/fibonacci.do</url-pattern>
   </servlet-mapping>
+  
+  
 </web-app>

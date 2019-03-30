@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.GregorianCalendar;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -83,6 +84,8 @@ public class FibonacciSeries extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		int count = Integer.parseInt(request.getParameter("count"));
 		
+		int maxElements = Integer.parseInt(getServletConfig().getInitParameter("max_elements"));
+		
 		// step #2. data processing
 		GregorianCalendar now = new GregorianCalendar();
 		logFile.printf("%TF %TT - count = %d\n", now, now, count);
@@ -101,7 +104,7 @@ public class FibonacciSeries extends HttpServlet {
 		out.println("<body>");
 			out.println("<h1>피보나치 수열</h1><hr>");
 			out.println("<p>원소의 개수 : " + count + "</p>");
-			if (count > 100) {
+			if (count > maxElements) {
 				out.println("<p>요청하신 원소의 개수가 너무 많습니다!....</p>");
 			}
 			else if (count > 2) {
@@ -131,8 +134,12 @@ public class FibonacciSeries extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
 		
+		ServletConfig config = getServletConfig();
+		int maxElements = Integer.parseInt(config.getInitParameter("max_elements"));
+		String logFileName = config.getInitParameter("log_file");
+		
 		// generate fibonacci series data
-		fiboSeries = new BigInteger[100];
+		fiboSeries = new BigInteger[maxElements];
 		fiboSeries[0] = new BigInteger("1");
 		fiboSeries[1] = new BigInteger("1");
 		for (int i=2; i<100; i++) {
@@ -141,7 +148,7 @@ public class FibonacciSeries extends HttpServlet {
 		
 		// open log file
 		try {
-			logFile = new PrintWriter(new FileWriter("/Users/yjkim/log_data.txt", true));
+			logFile = new PrintWriter(new FileWriter(logFileName, true));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
