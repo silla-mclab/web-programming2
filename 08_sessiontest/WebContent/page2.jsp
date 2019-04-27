@@ -8,9 +8,8 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Favorite Info Registration</h1>
-		<div align="right"><%=session.getAttribute("user_name") %> 님, 반갑습니다!...</div><hr>
-		<form method="post" action=<%=response.encodeURL("page3.do")%>>
+		<%@ include file="/header.jsp" %>
+ 		<form method="post" action=<%=response.encodeURL("page3.do")%>>
 			당신이 좋아하는 동물은?
 			<select name="pet">
 				<option>강아지</option>

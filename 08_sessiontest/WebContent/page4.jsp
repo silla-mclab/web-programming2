@@ -9,9 +9,8 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Favorite Info Registration</h1>
-		<div align="right"><%=session.getAttribute("user_name") %> 님, 반갑습니다!...</div><hr>
-		당신이 좋아하는 것들은?<p>
+		<%@ include file="/header.jsp" %>
+ 		<p>당신이 좋아하는 것들은?</p>
 		<%
 			FavoriteInfoDao dao = (FavoriteInfoDao)session.getAttribute("dao");
 			Set<String> keys = dao.getFavoriteItemNames();
@@ -24,7 +23,10 @@
 //			session.setMaxInactiveInterval(0);			
 		%>
 		<br><br><br>
+<!-- 
 		<a href="start.html">첫 페이지로 가기</a>
+ -->
+ 		<a href="/08_sessiontest/start2.html">첫 페이지로 가기</a>
 	</div>
 </body>
 </html>
