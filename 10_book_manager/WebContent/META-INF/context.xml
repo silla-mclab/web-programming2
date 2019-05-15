@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<!-- 
+	<Resource name="jdbc/bookdb" 
+	      auth="Container" 
+	      type="javax.sql.DataSource" 
+	      driverClassName="com.mysql.cj.jdbc.Driver" 
+	      url="jdbc:mysql://localhost:3306/bookdb" 
+	      username="testuser" 
+	      password="1234" 
+	      
+	      maxTotal="100" 
+	      maxIdle="20" 
+	      minIdle="5" 
+	      maxWaitMillis="10000" />
+ -->
+ 
+ 	 <ResourceLink name="jdbc/bookdb"
+          global="jdbc/g_bookdb"
+          auth="Container"
+          type="javax.sql.DataSource" />	    
+ 
+ </Context>

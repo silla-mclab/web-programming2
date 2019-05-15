@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.bookmgr.model.Book;
 import com.example.bookmgr.model.BookDbDao;
-import com.example.bookmgr.model.BookDbJdbcDao;
+import com.example.bookmgr.model.BookDbJdbcDbcpDao;
 import com.example.bookmgr.model.DbConnectionInfo;
 
 public class BookMgrService {
@@ -12,7 +12,9 @@ public class BookMgrService {
 	private BookDbDao dao = null;
 	
 	public BookMgrService(DbConnectionInfo connInfo) {
-		dao = new BookDbJdbcDao(connInfo);
+//		dao = new BookDbJdbcDao(connInfo);
+//		dao = new BookDbJdbcOrigDao(connInfo);
+		dao = new BookDbJdbcDbcpDao(connInfo);
 	}
 	
 	public List<Book> getBookList() {
