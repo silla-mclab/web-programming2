@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>고용인 정보 입력</title>
+</head>
+<body>
+	<div align="center">
+		<h1>고용인 정보 입력</h1><hr><br>
+	</div>
+	<div align="center">
+		<form method="post" action="control2.jsp">
+			<table border="1">
+				<tr>
+					<td style="width:60px; text-align:center;">이름</td>
+					<td style="width:200px; text-align:center;"><input type="text" name="name" required autofocus></td>
+				</tr>
+				<tr>
+					<td style="width:60px; text-align:center;">성별</td>
+					<td style="width:200px; text-align:center;">
+						<input type="radio" name="gender" value="male">남자
+						<input type="radio" name="gender" value="female">여자
+					</td>
+				</tr>
+				<tr>
+					<td style="width:60px; text-align:center;">나이</td>
+					<td style="width:200px; text-align:center;">
+						<INPUT TYPE="NUMBER" MIN="10" MAX="150" STEP="1" VALUE="25" SIZE="15" name="age">
+					</td>
+				</tr>
+				<tr>
+					<td style="width:60px; text-align:center;">업무</td>
+					<td style="width:200px; text-align:center;"><input type="text" name="task" required></td>
+				</tr>
+			</table><br>
+			<input type="submit" value="등록">
+			<input type="reset" value="초기화">
+		</form>
+	</div>
+</body>
+</html>
